@@ -399,6 +399,11 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!54 &398272093 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3396143429714145771, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+  m_PrefabInstance: {fileID: 460166092}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,6 +573,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+      propertyPath: ballRigidbody
+      value: 
+      objectReference: {fileID: 398272093}
     - target: {fileID: 8223538857707832798, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: m_Name
       value: Ball 1
@@ -842,6 +851,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &996709340 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3396143429714145771, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+  m_PrefabInstance: {fileID: 2164995905404557439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1181520179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -852,7 +866,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1794415301800999926, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.47
+      value: 5.58
       objectReference: {fileID: 0}
     - target: {fileID: 1794415301800999926, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: m_LocalPosition.y
@@ -860,7 +874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1794415301800999926, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1794415301800999926, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: m_LocalRotation.w
@@ -891,13 +905,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+      propertyPath: ballMass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: ballRadius
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: velocity.x
-      value: -1
+      value: -3
       objectReference: {fileID: 0}
+    - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+      propertyPath: ballRigidbody
+      value: 
+      objectReference: {fileID: 1941174647}
     - target: {fileID: 8223538857707832798, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: m_Name
       value: Ball 3
@@ -1124,6 +1146,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1941174647 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 3396143429714145771, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+  m_PrefabInstance: {fileID: 1181520179}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2034278246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1357,8 +1384,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: velocity.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+      propertyPath: ballRigidbody
+      value: 
+      objectReference: {fileID: 996709340}
     - target: {fileID: 8223538857707832798, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: m_Name
       value: Ball 2
