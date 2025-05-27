@@ -3,10 +3,16 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody), typeof(SphereCollider))]
 public class BallScript : MonoBehaviour
 {
+
     public Rigidbody ballRigidbody;
     public float ballMass;
     public float ballRadius;
     public Vector3 velocity;
+
+    //Gravity variables
+    private Vector3 gravity = new Vector3(0, -9.81f, 0);
+    private bool isOnGround = false;
+    private float groundY = 0f;
 
     public void SetProperties(Vector3 velocity, float mass, float radius)
     {
@@ -20,17 +26,41 @@ public class BallScript : MonoBehaviour
         ballRigidbody.useGravity = false;
 
         transform.localScale = new Vector3(radius, radius, radius);
-        transform.position = new Vector3(transform.position.x, radius / 2, transform.position.z);
+        transform.position = new Vector3(transform.position.x, radius / 2 + 0.1f, transform.position.z);
         this.velocity = velocity;
     }
+
+    public KeyCode startKey = KeyCode.Space;
+    private bool isMoving = false;
 
     private void Start()
     {
         SetProperties(velocity, ballMass, ballRadius);
+        isMoving = false;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(startKey))
+        {
+            StartMovement();
+        }
     }
 
     private void FixedUpdate()
     {
+        if (!isMoving) return;
+
+        if (!isOnGround || velocity.y > 0)
+        {
+            velocity += gravity * Time.fixedDeltaTime;
+        }
+        else
+        {
+            float targetY = groundY + ballRadius / 2;
+            transform.position = new Vector3(transform.position.x, targetY, transform.position.z);
+        }
+
         Vector3 nextPosition = transform.position + velocity * Time.fixedDeltaTime;
         ballRigidbody.MovePosition(nextPosition);
     }
@@ -48,9 +78,37 @@ public class BallScript : MonoBehaviour
             Debug.Log("Zdrzenie Kul");
             HandleBallCollision(other);
         }
+
+        if (other.CompareTag("Ground"))
+        {
+            HandleGroundCollision(other);
+
+        }
     }
 
-    private void HandleBallCollision(Collider otherBall) // Change to elastic collison
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Ground")){
+            isOnGround = false;
+        }
+    }
+
+    private void HandleGroundCollision(Collider ground)
+    {
+
+        groundY = 0;
+
+        if (velocity.y < 0)
+        {
+            Vector3 groundNormal = Vector3.up;
+            velocity = Vector3.Reflect(velocity, groundNormal);
+            velocity.y *= 1.0f; // Reducing boucne height;
+        }
+
+        isOnGround = true;
+    }
+
+    private void HandleBallCollision(Collider otherBall) // Add ball separation balls sometimes gets stuck to each other while rolling close to each other
     {
        
         BallScript other = otherBall.GetComponent<BallScript>();
@@ -97,7 +155,8 @@ public class BallScript : MonoBehaviour
         Vector3 v2tAfterVec = tangent * v2t;
 
         velocity = v1nAfterVec + v1tAfterVec;
-        other.velocity = v2nAfterVec + v2tAfterVec;
+        other.velocity = v2nAfterVec + v2tAfterVec; 
+        Debug.Log("After collision with ball: " + velocity + " ID " + other.GetInstanceID());
     }
 
     private void HandleWallCollision(Collider collision)
@@ -111,5 +170,11 @@ public class BallScript : MonoBehaviour
         transform.position += wallNormal * 0.01f;
 
         Debug.Log("After collision: " + velocity);
+    }
+
+    public void StartMovement()
+    {
+        isMoving = true;
+        Debug.Log("Ball movement started!");
     }
 }
