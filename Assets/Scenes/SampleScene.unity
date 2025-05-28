@@ -404,6 +404,17 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 3396143429714145771, guid: e82e38cba24845642b0424811ddb0354, type: 3}
   m_PrefabInstance: {fileID: 460166092}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &398272094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+  m_PrefabInstance: {fileID: 460166092}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b84e39febbf924a8e5279d1fee45e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,7 +546,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1794415301800999926, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.83
+      value: -6.99
       objectReference: {fileID: 0}
     - target: {fileID: 1794415301800999926, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: m_LocalPosition.y
@@ -573,13 +584,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2595197805300380122, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 6c7403691656e814db89a69ff9efe087, type: 2}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: ballRadius
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: velocity.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: ballRigidbody
@@ -864,6 +879,17 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 3396143429714145771, guid: e82e38cba24845642b0424811ddb0354, type: 3}
   m_PrefabInstance: {fileID: 2164995905404557439}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &996709341 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+  m_PrefabInstance: {fileID: 2164995905404557439}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b84e39febbf924a8e5279d1fee45e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1181520179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -874,11 +900,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1794415301800999926, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 4.35
       objectReference: {fileID: 0}
     - target: {fileID: 1794415301800999926, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.41
+      value: 1.54
       objectReference: {fileID: 0}
     - target: {fileID: 1794415301800999926, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: m_LocalPosition.z
@@ -912,17 +938,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2595197805300380122, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: c4aadd69ffad89d449457bea426e60c4, type: 2}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: ballMass
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: ballRadius
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: velocity.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: ballRigidbody
@@ -1268,6 +1298,17 @@ Rigidbody:
   m_CorrespondingSourceObject: {fileID: 3396143429714145771, guid: e82e38cba24845642b0424811ddb0354, type: 3}
   m_PrefabInstance: {fileID: 1181520179}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1941174648 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+  m_PrefabInstance: {fileID: 1181520179}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b84e39febbf924a8e5279d1fee45e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2034278246
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,6 +1355,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topViewCamera: {fileID: 330585543}
   sideViewCamera: {fileID: 2040435315}
+  balls:
+  - {fileID: 398272094}
+  - {fileID: 996709341}
+  - {fileID: 1941174648}
 --- !u!1 &2040435315
 GameObject:
   m_ObjectHideFlags: 0
@@ -1515,17 +1560,21 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2595197805300380122, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 2a0624213e48d6b4faebf76a2dc4e17d, type: 2}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: ballMass
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: ballRadius
-      value: 3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: velocity.x
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: velocity.y
