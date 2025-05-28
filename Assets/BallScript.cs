@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody), typeof(SphereCollider))]
 public class BallScript : MonoBehaviour
 {
-
+    private Camera mainCamera;
     public Rigidbody ballRigidbody;
     public float ballMass;
     public float ballRadius;
@@ -13,6 +13,14 @@ public class BallScript : MonoBehaviour
     private Vector3 gravity = new Vector3(0, -9.81f, 0);
     private bool isOnGround = false;
     private float groundY = 0f;
+
+    public KeyCode startKey = KeyCode.Space;
+    private bool isMoving = false;
+    private bool isDragging = false;
+    private Vector3 offset;
+    private Vector3 dragPlaneOffset;
+    private Plane dragPlane;
+    private Bounds arenaBounds;
 
     public void SetProperties(Vector3 velocity, float mass, float radius)
     {
@@ -30,13 +38,28 @@ public class BallScript : MonoBehaviour
         this.velocity = velocity;
     }
 
-    public KeyCode startKey = KeyCode.Space;
-    private bool isMoving = false;
-
     private void Start()
     {
+        mainCamera = Camera.main;
+        dragPlane = new Plane(Vector3.up, Vector3.zero);
         SetProperties(velocity, ballMass, ballRadius);
         isMoving = false;
+
+        var walls = GameObject.FindGameObjectsWithTag("Wall");
+
+        if (walls.Length == 0)
+        {
+            Debug.LogWarning("No walls found. Clamping won't work.");
+            return;
+        }
+
+        arenaBounds = new Bounds(walls[0].transform.position, Vector3.zero);
+        foreach (var wall in walls)
+        {
+            Collider col = wall.GetComponent<Collider>();
+            if (col != null)
+                arenaBounds.Encapsulate(col.bounds);
+        }
     }
 
     private void Update()
@@ -45,7 +68,104 @@ public class BallScript : MonoBehaviour
         {
             StartMovement();
         }
+
+        if (!isMoving)
+        {
+            HandleDrag();
+        }
     }
+
+    private void HandleDrag()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit[] hits = Physics.RaycastAll(ray, Mathf.Infinity);
+
+            System.Array.Sort(hits, (x, y) => x.distance.CompareTo(y.distance));
+
+            foreach (var hit in hits)
+            {
+                if (hit.collider.CompareTag("Ground") || hit.collider.CompareTag("Wall"))
+                    continue;
+
+                if (hit.collider.gameObject == gameObject)
+                {
+                    isDragging = true;
+                    float enter;
+                    dragPlane.Raycast(ray, out enter);
+                    dragPlaneOffset = transform.position - ray.GetPoint(enter);
+
+                    break;
+                }
+            }
+        }
+
+        if (Input.GetMouseButtonUp(0))
+        {
+            isDragging = false;
+        }
+
+        if (isDragging && mainCamera != null)
+        {
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            float enter;
+
+            if (dragPlane.Raycast(ray, out enter))
+            {
+                Vector3 newPos = ray.GetPoint(enter) + dragPlaneOffset;
+                newPos.y = ballRadius / 2 + 0.1f;
+                transform.position = ClampPosition(newPos);
+                ResolveInitialOverlaps();
+
+                Debug.DrawLine(ray.origin, newPos, Color.green, 0.1f);
+            }
+        }
+    }
+
+    Vector3 ClampPosition(Vector3 position)
+    {
+        Vector3 min = arenaBounds.min + new Vector3(ballRadius / 2, 0, ballRadius / 2);
+        Vector3 max = arenaBounds.max - new Vector3(ballRadius / 2, 0, ballRadius / 2);
+
+        position.x = Mathf.Clamp(position.x, min.x, max.x);
+        position.z = Mathf.Clamp(position.z, min.z, max.z);
+        position.y = ballRadius / 2 + 0.1f;
+
+        return position;
+    }
+
+    private void ResolveInitialOverlaps()
+    {
+        BallScript[] balls = FindObjectsByType<BallScript>(FindObjectsSortMode.None);
+
+        for (int i = 0; i < balls.Length; i++)
+        {
+            for (int j = i + 1; j < balls.Length; j++)
+            {
+                BallScript a = balls[i];
+                BallScript b = balls[j];
+
+                Vector3 delta = b.transform.position - a.transform.position;
+                float dist = delta.magnitude;
+                float minDist = a.ballRadius / 2 + b.ballRadius / 2;
+
+                if (dist < minDist && dist > 0.001f)
+                {
+                    Vector3 correction = delta.normalized * (minDist - dist) * 0.5f;
+                    a.transform.position -= correction;
+                    b.transform.position += correction;
+                }
+                else if (dist < 0.001f)
+                {
+                    Vector3 randomOffset = new Vector3(Random.value, 0, Random.value).normalized * 0.01f;
+                    a.transform.position += randomOffset;
+                    b.transform.position -= randomOffset;
+                }
+            }
+        }
+    }
+
 
     private void FixedUpdate()
     {
@@ -102,7 +222,7 @@ public class BallScript : MonoBehaviour
         {
             Vector3 groundNormal = Vector3.up;
             velocity = Vector3.Reflect(velocity, groundNormal);
-            velocity.y *= 1.0f; // Reducing boucne height;
+            velocity.y *= 1.0f; // Reducing bounce height;
         }
 
         isOnGround = true;

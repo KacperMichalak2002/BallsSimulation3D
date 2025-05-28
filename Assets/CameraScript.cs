@@ -86,27 +86,27 @@ public class CameraScript : MonoBehaviour
             // Mass
             GUI.Label(new Rect(20, yPos + 25, 100, 20), "Mass (1 - 10):");
             GUI.SetNextControlName($"mass_{i}");
-            massInputs[i] = GUI.TextField(new Rect(120, yPos + 25, 100, 20), massInputs[i]);
+            massInputs[i] = GUI.TextField(new Rect(145, yPos + 25, 100, 20), massInputs[i]);
 
             // Radius
             GUI.Label(new Rect(20, yPos + 50, 100, 20), "Radius (0.5 - 5):");
             GUI.SetNextControlName($"radius_{i}");
-            radiusInputs[i] = GUI.TextField(new Rect(120, yPos + 50, 100, 20), radiusInputs[i]);
+            radiusInputs[i] = GUI.TextField(new Rect(145, yPos + 50, 100, 20), radiusInputs[i]);
 
             // Velocity X
-            GUI.Label(new Rect(20, yPos + 75, 100, 20), "Velocity X (-10 - 10):");
+            GUI.Label(new Rect(20, yPos + 75, 120, 20), "Velocity X (-10 - 10):");
             GUI.SetNextControlName($"velX_{i}");
-            velocityXInputs[i] = GUI.TextField(new Rect(120, yPos + 75, 100, 20), velocityXInputs[i]);
+            velocityXInputs[i] = GUI.TextField(new Rect(145, yPos + 75, 100, 20), velocityXInputs[i]);
 
             // Velocity Y
-            GUI.Label(new Rect(20, yPos + 100, 100, 20), "Velocity Y (-10 - 10):");
+            GUI.Label(new Rect(20, yPos + 100, 120, 20), "Velocity Y (-10 - 10):");
             GUI.SetNextControlName($"velY_{i}");
-            velocityYInputs[i] = GUI.TextField(new Rect(120, yPos + 100, 100, 20), velocityYInputs[i]);
+            velocityYInputs[i] = GUI.TextField(new Rect(145, yPos + 100, 100, 20), velocityYInputs[i]);
 
             // Velocity Z
-            GUI.Label(new Rect(20, yPos + 125, 100, 20), "Velocity Z (-10 - 10):");
+            GUI.Label(new Rect(20, yPos + 125, 120, 20), "Velocity Z (-10 - 10):");
             GUI.SetNextControlName($"velZ_{i}");
-            velocityZInputs[i] = GUI.TextField(new Rect(120, yPos + 125, 100, 20), velocityZInputs[i]);
+            velocityZInputs[i] = GUI.TextField(new Rect(145, yPos + 125, 100, 20), velocityZInputs[i]);
         }
 
         if (currentFocusedControl != previousFocusedControl && !string.IsNullOrEmpty(previousFocusedControl))
