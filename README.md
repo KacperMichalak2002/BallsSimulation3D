@@ -17,7 +17,8 @@ A physics-based simulation of perfect spheres built in C# using Unity, where pro
 ## 🚀 Running the Game
 
 1. Open the project in Unity Hub.
-2. Press 'Play'
+2. Open Scenes -> 'SampleScene.unity'
+3. Press 'Play'
 
 ## 🖼️ Showcase
 
