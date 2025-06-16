@@ -1,0 +1,25 @@
+[09:14:53] Ball movement started!
+[09:14:53] Ball movement started!
+[09:14:53] Ball movement started!
+[09:14:53] Ball movement started!
+[09:14:53] Ball movement started!
+[09:14:53] Ball movement started!
+[09:14:56] Zdrzenie Kul
+[09:14:56] After collision with ball: (1.00, 0.00, 0.00) ID 42188
+[09:14:56] Zdrzenie Kul
+[09:14:58] After collision: (-1.00, 0.00, 0.00)
+[09:14:58] Zdrzenie Kul
+[09:14:58] After collision with ball: (-1.00, 0.00, 0.00) ID 42224
+[09:14:58] Zdrzenie Kul
+[09:14:58] After collision: (-3.00, 0.00, 0.00)
+[09:14:58] Zdrzenie Kul
+[09:14:58] After collision with ball: (-3.00, 0.00, 0.00) ID 42224
+[09:14:58] Zdrzenie Kul
+[09:14:59] Zdrzenie Kul
+[09:14:59] After collision with ball: (-3.00, 0.00, 0.00) ID 42188
+[09:14:59] Zdrzenie Kul
+[09:15:00] Zdrzenie Kul
+[09:15:00] After collision with ball: (-1.00, 0.00, 0.00) ID 42224
+[09:15:00] Zdrzenie Kul
+[09:15:02] After collision: (-1.00, 0.00, 0.00)
+[09:15:04] After collision: (3.00, 0.00, 0.00)

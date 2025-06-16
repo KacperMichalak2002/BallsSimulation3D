@@ -53,7 +53,7 @@ public class CameraScript : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartSimulation();
+            if(showGUI) StartSimulation();
         }
 
         // Moving camera with mouse
@@ -207,7 +207,6 @@ public class CameraScript : MonoBehaviour
             if (balls[i] != null)
             {
                 balls[i].SetProperties(velocities[i], masses[i], radii[i]);
-                balls[i].StartMovement();
             }
         }
     }

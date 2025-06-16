@@ -66,7 +66,7 @@ public class BallScript : MonoBehaviour
     {
         if (Input.GetKeyDown(startKey))
         {
-            StartMovement();
+            if (!isMoving)  StartMovement();
         }
 
         if (!isMoving)
@@ -195,7 +195,7 @@ public class BallScript : MonoBehaviour
 
         if (other.CompareTag("Ball"))
         {
-            Debug.Log("Zdrzenie Kul");
+            SessionLogger.Log("Zdrzenie Kul");
             HandleBallCollision(other);
         }
 
@@ -275,8 +275,8 @@ public class BallScript : MonoBehaviour
         Vector3 v2tAfterVec = tangent * v2t;
 
         velocity = v1nAfterVec + v1tAfterVec;
-        other.velocity = v2nAfterVec + v2tAfterVec; 
-        Debug.Log("After collision with ball: " + velocity + " ID " + other.GetInstanceID());
+        other.velocity = v2nAfterVec + v2tAfterVec;
+        SessionLogger.Log("After collision with ball: " + velocity + " ID " + other.GetInstanceID());
     }
 
     private void HandleWallCollision(Collider collision)
@@ -289,12 +289,12 @@ public class BallScript : MonoBehaviour
 
         transform.position += wallNormal * 0.01f;
 
-        Debug.Log("After collision: " + velocity);
+        SessionLogger.Log("After collision: " + velocity);
     }
 
     public void StartMovement()
     {
         isMoving = true;
-        Debug.Log("Ball movement started!");
+        SessionLogger.Log("Ball movement started!");
     }
 }

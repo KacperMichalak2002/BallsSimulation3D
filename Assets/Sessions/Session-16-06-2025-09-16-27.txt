@@ -1,0 +1,7 @@
+[09:16:27] Ball movement started!
+[09:16:27] Ball movement started!
+[09:16:27] Ball movement started!
+[09:16:30] Zdrzenie Kul
+[09:16:30] After collision with ball: (0.46, -0.50, 0.00) ID 42188
+[09:16:30] Zdrzenie Kul
+[09:16:32] After collision: (-1.00, 0.00, 0.00)
