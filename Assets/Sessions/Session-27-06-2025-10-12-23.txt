@@ -1,0 +1,39 @@
+[10:12:23] Ball movement started! Niebieska Kula
+[10:12:23] Ball movement started! Zielona Kula
+[10:12:23] Ball movement started! Czerwona Kula
+[10:12:23] Balls colided
+[10:12:23] After collision with ball: (5.72, 2.33, 0.00), color: Zielona Kula
+[10:12:23] After collision with ball: (-1.14, -0.47, 0.00), color: Niebieska Kula
+[10:12:23] Balls colided
+[10:12:24] Balls colided
+[10:12:24] After collision with ball: (5.67, 0.63, 0.00), color: Czerwona Kula
+[10:12:24] After collision with ball: (-3.95, -0.44, 0.00), color: Zielona Kula
+[10:12:24] Balls colided
+[10:12:24] Balls colided
+[10:12:24] After collision with ball: (-0.46, -0.28, 0.00), color: Zielona Kula
+[10:12:24] After collision with ball: (-2.21, -1.33, 0.00), color: Niebieska Kula
+[10:12:24] Balls colided
+[10:12:26] After collision with wall: (-5.67, -0.05, 0.00)
+[10:12:28] After collision with wall: (2.21, -1.33, 0.00)
+[10:12:30] Balls colided
+[10:12:30] After collision with ball: (-0.46, -0.10, 0.00), color: Czerwona Kula
+[10:12:30] After collision with ball: (-5.44, -1.14, 0.00), color: Zielona Kula
+[10:12:30] Balls colided
+[10:12:30] Balls colided
+[10:12:30] After collision with ball: (3.74, 1.38, 0.00), color: Zielona Kula
+[10:12:30] After collision with ball: (-2.93, -1.08, 0.00), color: Niebieska Kula
+[10:12:30] Balls colided
+[10:12:30] Balls colided
+[10:12:30] After collision with ball: (3.63, 0.65, 0.00), color: Czerwona Kula
+[10:12:30] After collision with ball: (-0.46, -0.08, 0.00), color: Zielona Kula
+[10:12:30] Balls colided
+[10:12:32] After collision with wall: (2.93, -1.08, 0.00)
+[10:12:33] Balls colided
+[10:12:33] After collision with ball: (3.13, 1.15, 0.00), color: Zielona Kula
+[10:12:33] After collision with ball: (0.46, 0.17, 0.00), color: Niebieska Kula
+[10:12:33] Balls colided
+[10:12:36] After collision with wall: (-3.63, -0.14, 0.00)
+[10:12:38] Balls colided
+[10:12:38] After collision with ball: (2.99, 0.63, 0.00), color: Czerwona Kula
+[10:12:38] After collision with ball: (-3.50, -0.73, 0.00), color: Zielona Kula
+[10:12:38] Balls colided

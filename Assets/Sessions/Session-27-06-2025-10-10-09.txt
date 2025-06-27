@@ -1,0 +1,33 @@
+[10:10:09] Ball movement started!
+[10:10:09] Ball movement started!
+[10:10:09] Ball movement started!
+[10:10:09] After collision: (4.00, 0.00, 0.00)
+[10:10:10] Zdrzenie Kul
+[10:10:10] After collision with ball: (4.00, 0.00, 0.00), color: Czerwona Kula
+[10:10:10] After collision with ball: (1.00, 0.00, 0.00), color: Zielona Kula
+[10:10:10] Zdrzenie Kul
+[10:10:11] After collision: (-4.00, 0.00, 0.00)
+[10:10:11] Zdrzenie Kul
+[10:10:11] After collision with ball: (1.00, 0.00, 0.00), color: Czerwona Kula
+[10:10:11] After collision with ball: (-4.00, 0.00, 0.00), color: Zielona Kula
+[10:10:11] Zdrzenie Kul
+[10:10:12] Zdrzenie Kul
+[10:10:12] After collision with ball: (2.13, -2.00, 0.00), color: Zielona Kula
+[10:10:12] After collision with ball: (-2.13, 2.00, 0.00), color: Niebieska Kula
+[10:10:12] Zdrzenie Kul
+[10:10:14] After collision: (-1.00, 0.00, 0.00)
+[10:10:15] Zdrzenie Kul
+[10:10:15] After collision with ball: (2.13, 0.00, 0.00), color: Czerwona Kula
+[10:10:15] After collision with ball: (-1.00, 0.00, 0.00), color: Zielona Kula
+[10:10:15] Zdrzenie Kul
+[10:10:16] After collision: (-2.13, 0.00, 0.00)
+[10:10:18] Zdrzenie Kul
+[10:10:18] After collision with ball: (-1.00, 0.00, 0.00), color: Czerwona Kula
+[10:10:18] After collision with ball: (-2.13, 0.00, 0.00), color: Zielona Kula
+[10:10:18] Zdrzenie Kul
+[10:10:21] After collision: (2.13, -0.03, 0.00)
+[10:10:23] Zdrzenie Kul
+[10:10:23] After collision with ball: (1.25, -1.07, 0.00), color: Zielona Kula
+[10:10:23] After collision with ball: (-1.23, 1.05, 0.00), color: Niebieska Kula
+[10:10:23] Zdrzenie Kul
+[10:10:25] After collision: (1.23, -0.07, 0.00)

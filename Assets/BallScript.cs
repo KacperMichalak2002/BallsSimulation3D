@@ -35,7 +35,7 @@ public class BallScript : MonoBehaviour
         ballRigidbody.useGravity = false;
 
         transform.localScale = new Vector3(radius, radius, radius);
-        transform.position = new Vector3(transform.position.x, radius / 2 + 0.1f, transform.position.z);
+        transform.position = new Vector3(transform.position.x, radius / 2, transform.position.z);
         this.velocity = velocity;
     }
 
@@ -196,7 +196,7 @@ public class BallScript : MonoBehaviour
 
         if (other.CompareTag("Ball"))
         {
-            SessionLogger.Log("Zdrzenie Kul");
+            SessionLogger.Log("Balls colided");
             HandleBallCollision(other);
         }
 
@@ -229,7 +229,7 @@ public class BallScript : MonoBehaviour
         isOnGround = true;
     }
 
-    private void HandleBallCollision(Collider otherBall) // Add ball separation balls sometimes gets stuck to each other while rolling close to each other
+    private void HandleBallCollision(Collider otherBall)
     {
        
         BallScript other = otherBall.GetComponent<BallScript>();
@@ -277,7 +277,8 @@ public class BallScript : MonoBehaviour
 
         velocity = v1nAfterVec + v1tAfterVec;
         other.velocity = v2nAfterVec + v2tAfterVec;
-        SessionLogger.Log("After collision with ball: " + velocity + ", color: " + other.description);
+        SessionLogger.Log("After collision with ball: " + other.velocity + ", color: " + other.description);
+        SessionLogger.Log("After collision with ball: " + velocity + ", color: " + description);
     }
 
     private void HandleWallCollision(Collider collision)
@@ -290,12 +291,12 @@ public class BallScript : MonoBehaviour
 
         transform.position += wallNormal * 0.01f;
 
-        SessionLogger.Log("After collision: " + velocity);
+        SessionLogger.Log("After collision with wall: " + velocity);
     }
 
     public void StartMovement()
     {
         isMoving = true;
-        SessionLogger.Log("Ball movement started!");
+        SessionLogger.Log($"Ball movement started! {description}");
     }
 }
