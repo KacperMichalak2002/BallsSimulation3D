@@ -597,6 +597,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+      propertyPath: description
+      value: Niebieska Kula
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: ballRigidbody
       value: 
       objectReference: {fileID: 398272093}
@@ -953,6 +957,10 @@ PrefabInstance:
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: velocity.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+      propertyPath: description
+      value: Czerwona Kula
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: ballRigidbody
@@ -1583,6 +1591,10 @@ PrefabInstance:
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: velocity.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
+      propertyPath: description
+      value: Zielona Kula
       objectReference: {fileID: 0}
     - target: {fileID: 8026736828065088286, guid: e82e38cba24845642b0424811ddb0354, type: 3}
       propertyPath: ballRigidbody

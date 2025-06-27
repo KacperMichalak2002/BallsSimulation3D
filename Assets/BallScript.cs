@@ -7,6 +7,7 @@ public class BallScript : MonoBehaviour
     public Rigidbody ballRigidbody;
     public float ballMass;
     public float ballRadius;
+    public string description;
     public Vector3 velocity;
 
     //Gravity variables
@@ -276,7 +277,7 @@ public class BallScript : MonoBehaviour
 
         velocity = v1nAfterVec + v1tAfterVec;
         other.velocity = v2nAfterVec + v2tAfterVec;
-        SessionLogger.Log("After collision with ball: " + velocity + " ID " + other.GetInstanceID());
+        SessionLogger.Log("After collision with ball: " + velocity + ", color: " + other.description);
     }
 
     private void HandleWallCollision(Collider collision)
